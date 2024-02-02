@@ -45,3 +45,4 @@ http://localhost/api/upload/
 http://localhost/api/files/  
 
 ## Preview:  
+[file_upload.webm](https://github.com/HelloAgni/upload_files/assets/93605568/36ecf592-b42f-4ef9-ac23-7e6f1f803978)
