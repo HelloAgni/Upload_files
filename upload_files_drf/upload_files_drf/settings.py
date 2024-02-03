@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'api',
     'django_celery_results',   # python manage.py migrate django_celery_results
     'drf_yasg',  # swagger
-
 ]
 
 MIDDLEWARE = [
@@ -149,21 +148,26 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # For full docker compose
-# sudo docker compose up --build
+# db + web + nginx + redis + worker
+# sudo docker compose up -d
 CELERY_BROKER_URL = 'redis://redis-m1:6379'
 
 # python manage.py migrate django_celery_results
 # CELERY_RESULT_BACKEND = 'redis://redis-m1:6379'
 
 # For local dev
+# local server + celery + rabbitMQ
 # RabbitMQ
 # CELERY_BROKER_URL = 'amqp://localhost:5672'
 
 # For local dev
+# local server + celery + redis
+# run special .yaml file from same folder
 # sudo docker compose -f docker-compose-v2.yaml up
 # 1. Start redis in docker with ports: "6379:6379"
-# 2. Start local celery: 
+# 2. Start local celery:
 # -> if same directory tree, at same lvl proj app, near the file manage.py
-# -> celery -A upload_files_drf worker --loglevel=info
-# 3. Start local django: python manage.py runserver  ---> http://127.0.0.1:8000/
+# celery -A upload_files_drf worker --loglevel=info
+# 3. Start local django at new terminal:
+# python manage.py runserver  ---> http://127.0.0.1:8000/
 # CELERY_BROKER_URL = 'redis://localhost:6379'

@@ -7,6 +7,12 @@ from .views import FileUploadView, FileViewSet
 
 app_name = 'api'
 
+# pip install django-rest-swagger
+# pip install drf-yasg
+# add to settings INSTALLED_APPS = []
+# 'rest_framework_swagger',
+# 'drf_yasg'
+# register urls
 schema_view = get_schema_view(
     openapi.Info(
         title="DRF Upload Files",
@@ -27,4 +33,5 @@ urlpatterns = [
 ]
 
 # if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#     urlpatterns += static(
+#         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
