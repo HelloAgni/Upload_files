@@ -40,7 +40,7 @@ sudo docker compose up -d
 http://localhost/api/docs/  
 
 ### Urls:  
-- **Upload file with 10 sec delay, simulate any process**   
+- **Upload file, simulate any process with 10 sec delay**   
 http://localhost/api/upload/  
 
 - **Check all files and dowload it by link**  

@@ -143,17 +143,21 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # For full docker compose
 # db + web + nginx + redis + worker
 # sudo docker compose up -d
-CELERY_BROKER_URL = 'redis://redis-m1:6379'
+CELERY_BROKER_URL = 'redis://redis-m1:6379/0'
 
 # python manage.py migrate django_celery_results
-# CELERY_RESULT_BACKEND = 'redis://redis-m1:6379'
+CELERY_RESULT_BACKEND = 'redis://redis-m1:6379/0'
+
+CELERY_BROKER_CONNECTION_RETRY = True
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+# CELERYD_PREFETCH_MULTIPLIER = 1
 
 # For local dev
 # local server + celery + rabbitMQ

@@ -9,7 +9,7 @@ TIME_DELAY = 10
 
 @shared_task
 def upload(id):
-    time.sleep(TIME_DELAY)  # Simulate Big file or hard process
+    time.sleep(TIME_DELAY)  # Simulate slow process...
     file = File.objects.get(id=id)
     file.processed = True
     file.save()
