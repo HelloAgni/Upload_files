@@ -39,6 +39,14 @@ sudo docker compose up -d
 **Swagger documentation available:**  
 http://localhost/api/docs/  
 
+**Maximum files size for nginx.conf = 100mb**
+```nginx
+server {
+    ...
+    client_max_body_size 100m;
+    ...
+}
+```
 ### Urls:  
 - **Upload file, simulate any process with 10 sec delay**   
 http://localhost/api/upload/  
